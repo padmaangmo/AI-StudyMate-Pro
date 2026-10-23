@@ -130,7 +130,7 @@ def gemini(contents, key, use_tools=True):
     if use_tools:
         payload['tools'] = tool_declarations()
     for attempt in range(3):
-        response = requests.post(API_URL, headers={'x-goog-api-key': key}, json=payload, timeout=60)
+        response = requests.post(API_URL, headers={'x-goog-api-key': key}, json=payload, timeout=10,120)
         if response.status_code in (429, 500, 502, 503, 504) and attempt < 2:
             time.sleep(2 ** attempt)
             continue
