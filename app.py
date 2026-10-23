@@ -16,7 +16,7 @@ st.set_page_config(page_title='AI StudyMate Pro', page_icon='🎓', layout='wide
 st.title('🎓 AI StudyMate Pro')
 st.caption('Codomax Module 6 | Gemini + RAG + ChromaDB + AI Agent Tools')
 
-MODEL = 'gemini-3.8-flash'
+MODEL = 'gemini-3.5-flash-lite'
 API_URL = f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent'
 
 @st.cache_resource
