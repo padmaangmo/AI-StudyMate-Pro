@@ -1,0 +1,16 @@
+flowchart TD
+    U[Student] --> UI[Streamlit UI]
+    UI -->|Upload PDF or TXT| EX[Text Extraction and Chunking]
+    EX --> EMB[MiniLM Embeddings]
+    EMB --> DB[(ChromaDB Vector Store)]
+    UI -->|Question and Session History| AG[Gemini Agent Controller]
+    AG --> CAL[Safe Calculator]
+    AG --> WIKI[Wikipedia API]
+    AG --> RAG[Notes Search Tool]
+    RAG --> EMBQ[Query Embedding]
+    EMBQ --> DB
+    DB --> RAG
+    CAL --> AG
+    WIKI --> AG
+    RAG --> AG
+    AG -->|Answer and Tool Trace| UI
